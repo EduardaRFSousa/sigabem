@@ -1,0 +1,163 @@
+/*
+ * ========================================
+ * 1. BASE GERAL E UTILITÁRIOS
+ * ========================================
+ */
+
+:root {
+    --darkblue: #29173b;
+    --darkestblue: #1a0c28;
+    --lightpurple: #dcbaff;
+    --hover-lightpurple: #f3d9ff;
+
+    --white: #ffffff;
+    --lightgreen: #e5fff8;
+    --mint: #01c097;
+    --darkgreen: #3c7f72;
+    --darkestgreen: #295f54;
+    --black: #0d0607;
+}
+
+body {
+    margin: 0;
+    padding: 0;   
+}
+
+/* Background e espaçamento lateral do conteúdo */
+#main-content{
+    width: 100%;
+    max-width: 1440px;
+    background-image: url('../images/light-background.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    padding: 0 10rem 0 10rem;
+}
+
+[data-bs-theme="dark"] #main-content {
+    background-image: url('../images/dark-background.png');
+}
+
+@media (max-width: 767.98px) {
+  #main-content {
+    padding: 0 7rem 0 7rem;
+  }
+}
+
+@media (max-width:600px) {
+  #main-content {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+/* Estilo do Botão Customizado (Bootstrap) */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+    color: #333;
+    text-shadow: none;
+}
+
+.btn-bd-primary {
+    --bs-btn-color: var(--bs-body-bg-rgb);
+    --bs-btn-bg: var(--mint);
+    --bs-btn-border-color: var(--mint);
+    --bs-btn-hover-color: var(--bs-body-bg-rgb);
+
+    --bs-btn-hover-bg: var(--mint);
+    --bs-btn-hover-border-color: var(--mint);
+    
+    --bs-btn-active-bg: var(--darkgreen);
+    --bs-btn-active-border-color: var(--darkgreen);
+}
+
+.bi {
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bd-mode-toggle .bi {
+    width: 1em;
+    height: 1em;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+.bd-mode-toggle .dropdown-menu .dropdown-item.active,
+.bd-mode-toggle .dropdown-menu .dropdown-item:active {
+    background-color: var(--mint) !important;
+    color: var(--white) !important; 
+}
+
+.bd-mode-toggle .dropdown-menu .dropdown-item.active .bi {
+    fill: var(--white) !important;
+}
+
+/*
+ * ========================================
+ * 2. NAVEGAÇÃO (STICKY NAV)
+ * ========================================
+ */
+
+.sticky-bg {
+    width: 100%;
+    background-color: var(--bs-body-bg-rgb);
+    background-color: rgba(var(--bs-body-bg-rgb), 0.5);
+    
+    z-index: 1030; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(8px); /* Suporte para navegadores WebKit (Safari) */
+    box-sizing: border-box;
+}
+
+#title-nav {
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.589);
+}
+
+/* Estilo Básico de todos os links do menu */
+.nav-masthead .nav-link {
+    color: var(--bs-body-color);
+    border-bottom: none !important; 
+    font-weight: lighter;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Espaçamento */
+.nav-masthead .nav-link + .nav-link {
+    margin-left: 1rem;
+}
+
+/* Efeito de brilho */
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+    color: var(--bs-body-color);
+    text-shadow: 0 0 30px var(--bs-body-color), 
+                 0 0 50px var(--bs-body-color);
+}
+
+/* Link ativo */
+.nav-masthead .active {
+    color: var(--bs-body-color);
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--bs-body-color), 
+                 0 0 15px var(--bs-body-color);
+}
+
+/*
+ * ========================================
+ * 3. RODAPÉ (FOOTER)
+ * ========================================
+ */
+ 
+footer .bi{
+    transition: color 0.4s ease;
+}
+
+footer .bi:hover {
+    color: var(--mint);
+}

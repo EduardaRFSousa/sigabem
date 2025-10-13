@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SigaBem Demo</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="../assets/css/home.css" rel="stylesheet" />
+    <script src="../assets/js/color-modes.js"> </script>
+  </head>
+
+  <body class="text-center">
+
+    <!-- Dark mode switcher -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- STICKY NAV -->
+    <div class="sticky-bg sticky-top shadow">
+        <nav class="navbar navbar-expand-md p-3">
+          <img 
+            src="../assets/images/sigabem-light-mode-without-text.png" 
+            alt="SigaBem Logo" 
+            width="50" 
+            height="50"
+          />
+
+          <h6 class="navbar-brand fw-bold ps-3" id="title-nav">SigaBem</h6>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav ms-auto nav-masthead">
+                  <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Início</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="about.html">Sobre</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="timeline.html">Linha do Tempo</a> </li>
+                  <li class="nav-item"> <a class="nav-link" href="credits.html">Créditos</a> </li>
+              </ul>
+          </div>
+        </nav>
+    </div>
+
+    <!-- COVER -->
+    <div class="hero-cover">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        <main class="px-3">
+          <h1 class="mb-3">Isso é o esqueleto da página!</h1>
+          <p class="lead mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum qui consequatur, perferendis hic cum possimus excepturi error reprehenderit rerum exercitationem id necessitatibus iure.
+          </p>
+          <p class="lead">
+            <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white"
+              >Saiba mais</a>
+          </p>
+        </main>
+
+      </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container-fluid" id="main-content">
+
+      <!-- INTRODUÇÃO -->
+      <div class="row featurette" id="introduction">
+
+        <div class="col-lg-7 text-start align-content-center">
+          <h2 class="featurette-heading fw-normal lh-1">Aqui Começa o Conteúdo da Pesquisa</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste laudantium repudiandae voluptate deleniti in rerum reiciendis exercitationem dolorem quo! Harum officia saepe, necessitatibus labore consequatur unde assumenda veritatis debitis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi blanditiis optio quis ad libero necessitatibus officia aut quod praesentium nesciunt obcaecati possimus officiis, laborum commodi facere suscipit animi recusandae nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ad. Aperiam, nobis soluta quod repellat illum consequuntur quae laborum velit sit fugit porro odit voluptate ratione dolor deleniti dolore. Consectetur.</p>
+        </div>
+
+        <div class="col-lg-5">
+          <img 
+            src="../assets/images/acessibility-simbol.png" 
+            class="card-img-top img-fluid rounded-3 mb-3" 
+            width="250"
+            height="250" 
+            alt="acessibility-simbol"
+          />
+        </div>
+
+      </div>
+
+      <!-- CARDS -->
+      <div class="row row-cols-1 row-cols-lg-2 g-4" id="cards-container">
+
+        <div class="col">
+          <div class="card info-card shadow rounded-4"> 
+            <h4 class="card-header text-start p-3 rounded-4">SigaBem App</h4>
+            <div class="card-body text-start">
+              <img 
+                  src="../assets/images/card-image-example.jpg" 
+                  class="card-img-top img-fluid rounded-3 mb-3" 
+                  width="300" 
+                  height="300" 
+                  alt="..."
+              />
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequuntur perspiciatis sint voluptatem non! Optio, quibusdam harum.</p>
+              <a href="../src/about.html" class="btn btn-outline-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card info-card shadow rounded-4"> 
+            <h4 class="card-header text-start p-3 rounded-4">SigaBem Bus</h4>
+            <div class="card-body text-start">
+              <img 
+                  src="../assets/images/card-image-example.jpg" 
+                  class="card-img-top img-fluid rounded-3 mb-3" 
+                  width="300" 
+                  height="300" 
+                  alt="..."
+              />
+              <p class="card-text **mb-3**">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequuntur perspiciatis sint voluptatem non! Optio, quibusdam harum.</p>
+              <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card info-card shadow rounded-4"> 
+            <h4 class="card-header text-start p-3 rounded-4">SigaBem Stop</h4>
+            <div class="card-body text-start">
+              <img 
+                  src="../assets/images/card-image-example.jpg" 
+                  class="card-img-top img-fluid rounded-3 mb-3" 
+                  width="300" 
+                  height="300" 
+                  alt="..."
+              />
+              <p class="card-text **mb-3**">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequuntur perspiciatis sint voluptatem non! Optio, quibusdam harum.</p>
+              <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card info-card shadow rounded-4"> 
+            <h4 class="card-header text-start p-3 rounded-4">SigaBem Web</h4>
+            <div class="card-body text-start">
+              <img 
+                  src="../assets/images/card-image-example.jpg" 
+                  class="card-img-top img-fluid rounded-3 mb-3" 
+                  width="300" 
+                  height="300" 
+                  alt="..."
+              />
+              <p class="card-text **mb-3**">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequuntur perspiciatis sint voluptatem non! Optio, quibusdam harum.</p>
+              <a href="#" class="btn btn-outline-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTÍCIA -->
+      <div class="row featurette" id="news">
+
+        <div class="col-lg-7 text-start">
+          <h2 class="featurette-heading fw-normal lh-1">Notícia SigaBem</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste laudantium repudiandae voluptate deleniti in rerum reiciendis exercitationem dolorem quo! Harum officia saepe, necessitatibus labore consequatur unde assumenda veritatis debitis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi blanditiis optio quis ad libero necessitatibus officia aut quod praesentium nesciunt obcaecati possimus officiis, laborum commodi facere suscipit animi recusandae nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ad. Aperiam, nobis soluta quod repellat illum consequuntur quae laborum velit sit fugit porro odit voluptate ratione dolor deleniti dolore. Consectetur.</p>
+        </div>
+
+        <div class="col-lg-5">
+          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500" preserveAspectRatio="xMidYMid slide" role="img" width="500" xmlns="http://www.w3.org/2000/svg">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect>
+            <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+          </svg>
+        </div>
+
+        
+
+        <div id="carouselExampleCaptions" class="carousel slide">
+        
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../assets/images/4k.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/4k.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/4k.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        </div>
+        
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- ARTIGO -->
+      <div class=" container">
+        <div class="text-start py-3">
+          <h2 class="featurette-heading fw-normal lh-1">Artigos</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste laudantium repudiandae voluptate deleniti in rerum reiciendis exercitationem dolorem quo! Harum officia saepe.</p>
+        </div>
+
+        <div class="dropdown">
+          <button 
+            class="btn btn-secondary dropdown-toggle w-100" 
+            type="button" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
+            Dropdown button
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-dark w-100">
+            <li><a class="dropdown-item" href="#list-item-1">FACEPE 2019 - 2020</a></li>
+            <li><a class="dropdown-item" href="#list-item-2">CNPq 2021 - 2024</a></li>
+            <li><a class="dropdown-item" href="#list-item-3">IFES 2022</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#list-item-4">CNPq 2024 - atual</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-9 w-100">
+          <div 
+            data-bs-spy="scroll" 
+            data-bs-target="#list-example" 
+            data-bs-smooth-scroll="true" 
+            class="scrollspy-example scrollable-content text-start" 
+            tabindex="0">
+            
+            <div>
+              <h4 id="list-item-1">FACEPE 2019 - 2020</h4>
+              <div class="container" id="artigosAccordion">
+        
+        <div class="card article-card">
+          <div class="card-header p-0">
+            <button 
+              class="btn w-100 text-start" 
+              type="button"
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseOne" 
+              aria-expanded="false"
+              aria-controls="collapseOne"
+            >
+              <h4 class="lead fw-bold mb-0 p-3">Artigo SigaBem Software Livre I</h4>
+            </button>
+          </div>
+          
+          <div id="collapseOne" class="collapse" data-bs-parent="#artigosAccordion">
+            <div class="card-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum doloremque odio perspiciatis dolor ipsam dicta nobis iusto quod debitis obcaecati, atque porro qui! Itaque, velit quisquam doloremque esse labore beatae.</p>
+              <embed 
+                src="../assets/documents/Sigabem-mobile-software-livre-Júlio.pdf" 
+                type="application/pdf" 
+                width="100%" 
+                height="500px"
+                class="rounded shadow"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-header bg-dark p-0">
+            <button 
+              class="btn w-100 text-start **collapsed**" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseTwo" 
+              aria-expanded="false" 
+              aria-controls="collapseTwo"
+            >
+              <h4 class="lead fw-bold mb-0 py-3 px-3">Artigo SigaBem Software Livre II</h4>
+            </button>
+          </div>
+            
+          <div id="collapseTwo" class="collapse" data-bs-parent="#artigosAccordion">
+            <div class="card-body">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam dolor enim, corporis porro ex pariatur maxime beatae neque laborum dolore consequuntur sint asperiores. Aperiam nisi, aut alias quidem hic ratione?</p>
+              <embed 
+                src="../assets/documents/outro-artigo.pdf" 
+                type="application/pdf" 
+                width="100%" 
+                height="500px" 
+                class="rounded shadow mt-3"
+              />
+            </div>
+          </div>
+        
+        </div>
+          
+      </div>
+            </div>
+
+            <div>
+              <h4 id="list-item-2">CNPq 2021 - 2024</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam dolor enim, corporis porro ex pariatur maxime beatae neque laborum dolore consequuntur sint asperiores. Aperiam nisi, aut alias quidem hic ratione?</p>
+            </div>
+
+            <div>
+              <h4 id="list-item-3">IFES 2022</h4>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, dolorem? Error sint neque, eum esse quia ipsum aliquam a iure distinctio explicabo deleniti aut excepturi, aliquid quos. Corporis, sapiente perspiciatis?</p>
+            </div>
+
+            <div>
+              <h4 id="list-item-4">CNPq 2024 - atual</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem doloribus, aliquid sapiente est porro possimus nostrum ut? Blanditiis aliquam, praesentium doloribus labore obcaecati facere maiores culpa atque aliquid quo? Eaque.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+      <!-- FOOTER -->
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-4 px-5 mt-5 border-top text-center text-md-start">
+
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center mb-2 mb-md-0">
+          <div class="d-inline-flex align-items-center">
+            <img 
+              src="../assets/images/sigabem-light-mode-without-text.png" 
+              alt="SigaBem Logo" 
+              width="40" 
+              height="40"
+            />
+            <span class="ps-3 text-body-secondary">&copy; 2025 SigaBem. Todos os direitos reservados.</span>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
+          <ul class="nav list-unstyled d-flex mb-0">
+            <li class="ms-3">
+              <a class="text-body-secondary" href="#" aria-label="Instagram">
+                <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a class="text-body-secondary" href="#" aria-label="Email">
+                <i class="bi bi-envelope" style="font-size: 1.5rem;"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </footer>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+ 
+  </body>
+</html>
