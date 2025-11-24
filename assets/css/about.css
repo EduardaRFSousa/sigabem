@@ -1,0 +1,7 @@
+@import url('index.css');
+
+.list-unstyled li i {
+    position: relative;
+    top: -7px; /* Valor típico para compensar o line-height do texto */
+    /* Você pode tentar -2px ou -4px. */
+}
