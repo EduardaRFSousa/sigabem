@@ -5,3 +5,12 @@
     top: -7px; /* Valor típico para compensar o line-height do texto */
     /* Você pode tentar -2px ou -4px. */
 }
+
+.fluxograma-dynamic {
+    content: url('../images/about/fluxograma-light-mode.png');
+}
+
+/* 2. ESTILO DARK MODE */
+[data-bs-theme="dark"] .fluxograma-dynamic {
+    content: url('../images/about/fluxograma-dark-mode.png');
+}

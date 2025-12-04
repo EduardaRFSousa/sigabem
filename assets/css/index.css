@@ -105,14 +105,11 @@ b,
 }
 
 .logo-dynamic {
-    /* Define o caminho da imagem LIGHT mode */
     content: url('../images/logos/sigabem-light-mode-without-text.png');
 }
 
 /* 2. ESTILO DARK MODE */
-/* Quando o body tem o atributo data-bs-theme="dark" */
 [data-bs-theme="dark"] .logo-dynamic {
-    /* Troca para o caminho da imagem DARK mode */
     content: url('../images/logos/sigabem-dark-mode-without-text.png');
 }
 
