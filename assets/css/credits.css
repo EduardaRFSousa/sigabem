@@ -40,9 +40,27 @@
     color: var(--white);
 }
 
+ #students-container {
+    padding: 15rem 0 15rem 0; 
+ }
+
 /*
  * ========================================
- * 2. MIDIAS SOCIAIS
+ * 2. CENTRO DE PESQUISA
+ * ========================================
+ */
+
+#location-link {
+    color: #8f8f8f;
+}
+
+#location-link:hover {
+    color: var(--mint);
+}
+
+/*
+ * ========================================
+ * 3. MIDIAS SOCIAIS
  * ========================================
  */
 
@@ -72,18 +90,3 @@
 .no-wrap {
     white-space: nowrap;
 }
-
-/*
- * ========================================
- * 3. APOIADORES
- * ========================================
- */
-
-
-
-
-
-
- #students-container {
-    padding: 15rem 0 15rem 0; 
- }

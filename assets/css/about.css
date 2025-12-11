@@ -80,7 +80,7 @@
 
 /*
  * ========================================
- * 3. FLUXOGRAMA DINÂMICO (LIGHT E DARK MODE)
+ * 3. FLUXOGRAMAS
  * ========================================
  */
 .fluxograma-dynamic {
@@ -92,14 +92,27 @@
     content: url('../images/about/fluxograma-dark-mode.png');
 }
 
+#fluxograma-servidor{
+    margin: 5rem 0 15rem 0;
+}
 
-
-
-
+/*
+ * ========================================
+ * 4. SEÇÕES DOS MÓDULOS
+ * ========================================
+ */
+.section-container{
+    margin-bottom: 12rem;
+}
 
 
 .list-unstyled li i {
     position: relative;
     top: -7px; /* Valor típico para compensar o line-height do texto */
     /* Você pode tentar -2px ou -4px. */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto 50% transparente */
+    padding: 5px;
 }
