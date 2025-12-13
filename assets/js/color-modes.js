@@ -22,7 +22,7 @@
       // Usa Regex para substituir o nome da pasta (light-mode ou dark-mode)
       // O regex busca por '/telas-app/' seguido por 'light-mode' OU 'dark-mode'
       const newSrc = currentSrc.replace(
-        /(\/telas-app\/)(light-mode|dark-mode)(\/.*)/, 
+        /(\/[a-z0-9_-]+\/)(light-mode|dark-mode)(\/.*)/, 
         `$1${themeFolder}$3`
       );
       
